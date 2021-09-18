@@ -1,6 +1,6 @@
 <template>
     <table class="table-fixed w-full my-2">
-        <thead>
+        <thead class="sticky top-0 bg-white">
             <tr class="text-sm text-left border-b">
                 <th class="pt-4 pb-2 w-20 text-blue"># </th>
                 <th class="pt-4 pb-2 mx-4 text-gray-600 uppercase">Customer</th>
