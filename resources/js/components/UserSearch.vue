@@ -83,10 +83,9 @@ export default {
             })
         }
     },
-    computed: {
-        query() {
+    watch: {
+        search() {
             this.fetch()
-            return this.search
         }
     },
     mounted() {

@@ -1960,10 +1960,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  computed: {
-    query: function query() {
+  watch: {
+    search: function search() {
       this.fetch();
-      return this.search;
     }
   },
   mounted: function mounted() {
