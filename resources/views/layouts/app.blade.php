@@ -14,8 +14,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <div class="flex h-screen" id="app">
-            <div class="overflow-auto w-104 hidden bg-gray-800 lg:flex flex-col">
+        <div class="flex h-screen flex-col md:flex-row" id="app">
+            <div class="md:overflow-scroll w-full md:w-104 bg-gray-800 flex flex-col">
                 <div class="header sticky top-0 flex justify-between bg-gray-900 px-4 py-8 shadow-lg">
                     <p class="ml-5 font-bold text-2xl text-white">Advance Exteriors</p>
                     <svg class="text-gray-600 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -102,7 +102,7 @@
                     </svg>
                     <p class="ml-5 text-base font-bold">Maps</p>
                 </button>
-                <button class="flex px-4 py-3 text-gray-300">
+                <button class="flex px-4 pt-3 pb-5 text-gray-300">
                     <svg class="ml-5 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>

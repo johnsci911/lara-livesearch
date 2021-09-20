@@ -25,7 +25,7 @@ class UserController extends Controller
                 ->orWhereHas('company', function ($query) use ($search) {
                     return $query->where('name', 'like', '%' . $search . '%');
                 });
-        })->get();
+        })->paginate(10);
 
         return UserResource::collection($users);
     }
