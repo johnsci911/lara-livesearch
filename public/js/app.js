@@ -20104,7 +20104,7 @@ var render = function() {
           "button",
           {
             staticClass: "bg-white mx-2 md:mx-6 px-3 py-2 rounded-lg",
-            class: !_vm.links.next ? "text-gray-500" : "",
+            class: !_vm.links.next ? "text-gray-300" : "",
             on: {
               click: function($event) {
                 return _vm.nextPage()

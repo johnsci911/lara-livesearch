@@ -55,7 +55,7 @@
 			<button v-on:click="prevPage()" class="bg-white mx-2 md:mx-6 px-3 py-2 rounded-lg" v-bind:class="!links.prev ? 'text-gray-300' : ''">
 				Previous
 			</button>
-			<button v-on:click="nextPage()" class="bg-white mx-2 md:mx-6 px-3 py-2 rounded-lg" v-bind:class="!links.next ? 'text-gray-500' : ''">
+			<button v-on:click="nextPage()" class="bg-white mx-2 md:mx-6 px-3 py-2 rounded-lg" v-bind:class="!links.next ? 'text-gray-300' : ''">
 				Next
 			</button>
 		</div>
