@@ -1,6 +1,6 @@
 <template>
 	<div>
-        <div class="top-bar flex flex-col md:flex-row md:justify-between bg-white border-t shadow-lg">
+        <div class="flex flex-col md:flex-row md:justify-between bg-white border-t shadow-lg">
             <div class="flex">
                 <div class="px-4 py-5 border-r">
                     <p class="text-gray-600 text-base font-bold">Contacts</p>

@@ -13,9 +13,9 @@
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="font-sans bg-gray-background text-gray-900 text-sm">
+    <body>
         <div class="flex flex-col md:flex-row" id="app">
-            <div class="w-full md:w-104 bg-gray-800 flex flex-col">
+            <div class="w-full md:w-96 bg-gray-800">
                 <div class="header sticky top-0 flex justify-between bg-gray-900 px-4 py-8 shadow-lg">
                     <p class="ml-5 font-bold text-2xl text-white">Advance Exteriors</p>
                     <svg class="text-gray-600 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -111,7 +111,7 @@
             </div>
 
 			<div class="w-full flex flex-col bg-gray-200">
-				<div class="top-bar flex flex-col md:flex-row bg-white justify-between">
+				<div class="flex flex-col md:flex-row bg-white justify-between">
 					<div class="flex">
 						<button class="w-full md:w-22 bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-xl">Pages</button>
 					</div>
@@ -141,7 +141,7 @@
 						</div>
 					</div>
 				</div>
-				<user-search></user-search>
+				@yield('content')
 			</div>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>

@@ -19868,7 +19868,7 @@ var render = function() {
       "div",
       {
         staticClass:
-          "top-bar flex flex-col md:flex-row md:justify-between bg-white border-t shadow-lg"
+          "flex flex-col md:flex-row md:justify-between bg-white border-t shadow-lg"
       },
       [
         _c("div", { staticClass: "flex" }, [
