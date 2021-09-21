@@ -113,7 +113,7 @@
 			<div class="w-full flex flex-col bg-gray-200">
 				<div class="flex flex-col md:flex-row bg-white justify-between">
 					<div class="flex">
-						<button class="w-full md:w-22 bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-xl">Pages</button>
+                        <button class="w-full md:w-22 bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-xl"><a href="{{ route('users.index') }}">Pages</a></button>
 					</div>
 					<div class="flex justify-between md:justify-content-between mr-2">
 						<div class="flex px-2 py-3">

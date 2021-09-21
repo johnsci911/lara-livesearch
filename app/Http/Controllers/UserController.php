@@ -18,4 +18,11 @@ class UserController extends Controller
 			'userId' => $user->id,
 		]);
 	}
+
+    public function edit(User $user)
+    {
+        return view('users.edit', [
+            'userId' => $user->id,
+        ]);
+    }
 }

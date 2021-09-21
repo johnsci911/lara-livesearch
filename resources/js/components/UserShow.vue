@@ -6,10 +6,13 @@
 					<img src="https://gravatar.com/avatar/7a3e469433f289c6f0d3cc98519e8f54?s=200&amp;d=https://s3.amazonaws.com/laracasts/images/forum/avatars/default-avatar-16.png" alt="avatar" class="w-14 h-14 rounded-xl">
 				</a>
 			</div>
-			<div class="md:w-full flex flex-col justify-between px-3">
+			<div class="md:w-full flex flex-col justify-between px-3 space-y-2">
 				<h4 class="text-xl font-semibold mt-2 md:mt-0">
-				<a href="http://laravote.test/idea/veritatis-mollitia-blanditiis-suscipit" class="idea-link hover:underline">Veritatis Mollitia Blanditiis Suscipit</a>
-			</h4>
+                    {{ user.name }}
+                </h4>
+                <p class="text-gray-400">{{ user.email }}</p>
+                <p class="text-gray-600 text-sm">{{ user.phone }}</p>
+                <p class="text-gray-600 text-sm font-bold">{{ user.company }} - {{ user.website }}</p>
 			</div>
 		</div>
 	</div>
@@ -17,15 +20,29 @@
 
 <script>
 export default {
-	prop: [
+	props: [
 		'userId'
 	],
-	date() {
-
-	},
+    data() {
+        return {
+            user: {}
+        }
+    },
 	methods: {
-
-	}
+        fetchUser() {
+            axios.get('/api/user/' + this.userId, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                }
+            }).then(response => {
+                this.user = response.data
+            })
+        }
+	},
+    mounted() {
+        this.fetchUser()
+    }
 }
 
 </script>

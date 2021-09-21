@@ -50,7 +50,6 @@ export default {
     },
     methods: {
         fetch(page) {
-			console.log('from fetch: ' + page)
             axios.get('api/user?page=' + page, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +59,6 @@ export default {
                     'search': this.search,
                 }
             }).then(response => {
-				console.log(response.data.links)
                 this.results = response.data.data
 				this.links = response.data.links
             })
@@ -69,7 +67,6 @@ export default {
 			if (this.links.next != null) {
 				this.currentPage += 1
 				this.fetch(this.currentPage)
-				console.log(this.currentPage)
 			}
 		},
 		prevPage() {

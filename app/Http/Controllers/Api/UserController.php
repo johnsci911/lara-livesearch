@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\EditUserRequest;
 use App\Http\Resources\UserResource;
-use App\Models\Company;
 use App\Models\User;
 use App\Traits\ApiResponse;
 use Illuminate\Support\Facades\Hash;
@@ -70,7 +69,9 @@ class UserController extends Controller
     public function show(User $user)
     {
         if ($user) {
-            return response($user, 200);
+            $resource = new UserResource($user);
+
+            return response($resource, 200);
         }
 
         return response()->json([
@@ -96,7 +97,7 @@ class UserController extends Controller
                     'email' => $request->email,
                     'phone' => $request->phone,
                     'website' => $request->website,
-                    'company_id' => $request->company_id,
+                    // 'company_id' => $request->company_id,
                 ]);
 
                 return response()->json([
