@@ -20360,7 +20360,7 @@ var staticRenderFns = [
           "div",
           {
             staticClass:
-              "w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm"
+              "hidden md:block w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm"
           },
           [_vm._v("Company Name")]
         ),
@@ -20378,7 +20378,7 @@ var staticRenderFns = [
           "div",
           {
             staticClass:
-              "hidden md:block w-48 px-2 pt-2 pb-2 text-left text-gray-600 uppercase text-xs md:text-sm"
+              "w-48 px-2 pt-2 pb-2 text-left text-gray-600 uppercase text-xs md:text-sm"
           },
           [_vm._v("Actions")]
         )

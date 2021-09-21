@@ -5,9 +5,9 @@
 			<div class="w-48  px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Customer</div>
 			<div class="hidden md:block w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Phone</div>
 			<div class="hidden md:block w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Website</div>
-			<div class="w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Company Name</div>
+			<div class="hidden md:block w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Company Name</div>
 			<div class="w-48 px-2 py-2 text-left text-gray-600 uppercase text-xs md:text-sm">Status</div>
-			<div class="hidden md:block w-48 px-2 pt-2 pb-2 text-left text-gray-600 uppercase text-xs md:text-sm">Actions</div>
+			<div class="w-48 px-2 pt-2 pb-2 text-left text-gray-600 uppercase text-xs md:text-sm">Actions</div>
 		</div>
 		<div v-for="user in results" :key="user.id" class="flex border-b">
 			<div class="w-10 px-2 py-2 text-left text-xs md:text-sm">{{ user.id }}</div>
