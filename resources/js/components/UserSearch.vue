@@ -14,7 +14,7 @@
                     <input v-model="search" type="search" placeholder="Search" class="w-full rounded-xl bg-gray-200 border-none px-4 py-3 placeholder-gray-900">
                 </div>
             </div>
-            <button class="bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-lg">Add Contact</button>
+            <button @click="createUser()" class="bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-lg">Add Contact</button>
         </div>
         <div class="mx-2 md:mx-6 my-6">
             <div class="bg-white rounded-lg shadow-lg px-2 md:px-6">
@@ -74,7 +74,11 @@ export default {
 				this.currentPage -= 1
 				this.fetch(this.currentPage)
 			}
-		}
+		},
+        createUser() {
+            console.log('create')
+            window.location.href = '/users/create'
+        }
     },
     watch: {
         search() {

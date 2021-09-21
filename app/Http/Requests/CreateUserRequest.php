@@ -29,11 +29,11 @@ class CreateUserRequest extends FormRequest
     {
         return [
 			'name' => 'required|unique:users',
-			'email' => 'email|unique:users',
+			'email' => 'required|email|unique:users',
 			'company_id' => 'integer|required|exists:companies,id',
 			'website' => 'min:8|required',
 			'phone' => 'min:8|required',
-            'password' => 'required|confirmed|min:8',
+            // 'password' => 'required|confirmed|min:8',
         ];
     }
 

@@ -14,6 +14,9 @@
                 <p class="text-gray-600 text-sm">{{ user.phone }}</p>
                 <p class="text-gray-600 text-sm font-bold">{{ user.company }} - {{ user.website }}</p>
 			</div>
+            <div class="flex-initial">
+                <button @click="update()" class="w-full md:w-22 bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-xl">Edit</button>
+            </div>
 		</div>
 	</div>
 </template>
@@ -38,6 +41,9 @@ export default {
             }).then(response => {
                 this.user = response.data
             })
+        },
+        update() {
+            window.location.href = '/users/' + this.userId + '/edit'
         }
 	},
     mounted() {

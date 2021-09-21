@@ -25,4 +25,9 @@ class UserController extends Controller
             'userId' => $user->id,
         ]);
     }
+
+    public function create()
+    {
+        return view('users.create');
+    }
 }

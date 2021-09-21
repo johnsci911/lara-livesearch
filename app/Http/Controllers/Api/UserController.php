@@ -31,7 +31,7 @@ class UserController extends Controller
                 ->orWhereHas('company', function ($query) use ($search) {
                     return $query->where('name', 'like', '%' . $search . '%');
                 });
-        })->paginate(10);
+        })->latest()->paginate(10);
 
         return UserResource::collection($users);
     }
@@ -97,7 +97,7 @@ class UserController extends Controller
                     'email' => $request->email,
                     'phone' => $request->phone,
                     'website' => $request->website,
-                    // 'company_id' => $request->company_id,
+                    'company_id' => $request->company_id,
                 ]);
 
                 return response()->json([
