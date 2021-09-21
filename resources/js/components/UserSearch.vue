@@ -82,6 +82,7 @@ export default {
     watch: {
         search() {
             this.fetch()
+			this.currentPage = 1
         }
     },
     mounted() {

@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('users', PageController::class);
+Route::resource('users', UserController::class);
 
