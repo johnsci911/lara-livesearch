@@ -14,8 +14,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <div class="flex h-screen flex-col md:flex-row" id="app">
-            <div class="md:overflow-scroll w-full md:w-104 bg-gray-800 flex flex-col">
+        <div class="flex flex-col md:flex-row" id="app">
+            <div class="w-full md:w-104 bg-gray-800 flex flex-col">
                 <div class="header sticky top-0 flex justify-between bg-gray-900 px-4 py-8 shadow-lg">
                     <p class="ml-5 font-bold text-2xl text-white">Advance Exteriors</p>
                     <svg class="text-gray-600 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">

@@ -19942,7 +19942,7 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "overflow-auto mx-2 md:mx-6 my-6" }, [
+    _c("div", { staticClass: "mx-2 md:mx-6 my-6" }, [
       _c(
         "div",
         { staticClass: "bg-white rounded-lg shadow-lg px-2 md:px-6" },

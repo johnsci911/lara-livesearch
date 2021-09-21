@@ -16,7 +16,7 @@
             </div>
             <button class="bg-gray-200 mx-4 my-2 px-4 py-3 text-blue font-bold rounded-lg">Add Contact</button>
         </div>
-        <div class="overflow-auto mx-2 md:mx-6 my-6">
+        <div class="mx-2 md:mx-6 my-6">
             <div class="bg-white rounded-lg shadow-lg px-2 md:px-6">
                 <user-results :results="this.results"></user-results>
             </div>
