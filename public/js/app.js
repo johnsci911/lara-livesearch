@@ -1834,12 +1834,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['userId', 'buttonType'],
+  props: ['userId', 'buttonType', 'companies'],
   data: function data() {
     return {
       user: {},
-      errors: {}
+      errors: {},
+      selectedCompany: Number
     };
   },
   methods: {
@@ -1853,6 +1857,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this.user = response.data;
+        _this.selectedCompany = _this.user.companyId;
       });
     },
     createUpdate: function createUpdate() {
@@ -1863,7 +1868,7 @@ __webpack_require__.r(__webpack_exports__);
         'email': this.user.email,
         'phone': this.user.phone,
         'website': this.user.website,
-        'company_id': this.user.company
+        'company_id': this.selectedCompany
       };
 
       if (this.buttonType === 'add') {
@@ -20076,28 +20081,43 @@ var render = function() {
               _c("label", { staticClass: "w-32 py-2 px-2" }, [
                 _vm._v("Company: ")
               ]),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.user.company,
-                    expression: "user.company"
-                  }
-                ],
-                staticClass:
-                  "w-full rounded-xl bg-gray-200 border-none px-4 py-2",
-                attrs: { type: "text" },
-                domProps: { value: _vm.user.company },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selectedCompany,
+                      expression: "selectedCompany"
                     }
-                    _vm.$set(_vm.user, "company", $event.target.value)
+                  ],
+                  staticClass:
+                    "w-full bg-gray-200 rounded-lg border-none px-4 py-2",
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.selectedCompany = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
                   }
-                }
-              })
+                },
+                _vm._l(_vm.companies, function(item) {
+                  return _c("option", { domProps: { value: item.id } }, [
+                    _vm._v(_vm._s(item.name))
+                  ])
+                }),
+                0
+              )
             ]),
             _vm._v(" "),
             _vm.errors.company_id

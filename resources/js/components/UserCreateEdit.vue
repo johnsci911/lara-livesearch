@@ -20,7 +20,10 @@
                 </div>
                 <p v-if="errors.phone" class="px-32 text-red text-xs">{{ errors.phone.join(',') }}</p>
                 <div class="flex">
-                    <label class="w-32 py-2 px-2">Company: </label><input type="text" class="w-full rounded-xl bg-gray-200 border-none px-4 py-2" v-model="user.company">
+                    <label class="w-32 py-2 px-2">Company: </label>
+					<select v-model="selectedCompany" class="w-full bg-gray-200 rounded-lg border-none px-4 py-2">
+						<option v-for="item in companies" :value="item.id">{{ item.name }}</option>
+					</select>
                 </div>
                 <p v-if="errors.company_id" class="px-32 text-red text-xs">{{ errors.company_id.join(',') }}</p>
                 <div class="flex">
@@ -38,11 +41,13 @@ export default {
 	props: [
 		'userId',
         'buttonType',
+		'companies',
 	],
     data() {
         return {
             user: {},
-            errors: {}
+            errors: {},
+			selectedCompany: Number
         }
     },
 	methods: {
@@ -55,6 +60,7 @@ export default {
                 }
             }).then(response => {
                 this.user = response.data
+				this.selectedCompany = this.user.companyId
             })
         },
         createUpdate() {
@@ -63,7 +69,7 @@ export default {
                 'email': this.user.email,
                 'phone': this.user.phone,
                 'website': this.user.website,
-                'company_id': this.user.company
+                'company_id': this.selectedCompany
             }
 
             if (this.buttonType === 'add') {
